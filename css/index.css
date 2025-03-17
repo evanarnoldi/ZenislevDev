@@ -1,14 +1,17 @@
 /* Splash Class */
 #splash {
   position: relative;
-  height: 50vh;
+  height: 75vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   overflow: hidden;
   background: no-repeat center center;
-  background-size: auto;
+  background-size: cover;
+  padding: 60px 20px;
+  margin-bottom: 20px;
 }
   
   .splash_content {
@@ -29,11 +32,12 @@
     }
   }
   
-/* Common section styles */
+/* Ensure sections don't overlap */
 section {
-  padding: 60px 0;
-  width: 100%;
-  box-sizing: border-box;
+  min-height: auto;
+  position: relative;
+  z-index: 1; /* Ensure proper stacking */
+  background-color: black; /* Match your site background */
 }
 
 /* Biography */
@@ -92,20 +96,6 @@ section {
 
 .contact-link span {
   font-weight: 500;
-}
-
-/* Mobile responsiveness for bio & contact */
-@media (max-width: 576px) {
-  .contact-links {
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-  }
-  
-  .contact-link {
-      width: 180px;
-      justify-content: center;
-  }
 }
 
 /* Resume Section */
@@ -176,6 +166,49 @@ section {
   display: block;
   opacity: 1;
   position: relative;
+}
+
+.job-description.collapsed ul {
+  max-height: 120px; /* Limit the height when collapsed */
+  overflow: hidden;
+  position: relative;
+}
+
+.job-description.collapsed ul::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)); /* Fade out effect */
+  pointer-events: none;
+}
+
+.toggle-description {
+  display: inline-block;
+  margin-top: 10px;
+  color: #04ff00; /* Use your theme color */
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Company-specific colors for the toggle button */
+#stairway .toggle-description {
+  color: #FF4040; /* Red */
+}
+
+#zenius .toggle-description {
+  color: #BB33FF; /* Bright Purple */
+}
+
+#cakap .toggle-description {
+  color: #40E0D0; /* Turquoise */
+}
+
+#freelance .toggle-description {
+  color: #04ff00; /* Green */
 }
 
 /* Animation classes */
@@ -288,30 +321,6 @@ section {
 
 #freelance .job-description li::before {
   color: #04ff00; /* Green */
-}
-
-/* Mobile responsiveness for Resume */
-@media (max-width: 768px) {
-  .company-tab.active {
-    border-left: none;
-    border-bottom: 2px solid; /* The color will be inherited from the text color */
-  }
-  
-  .company-tab[data-company="stairway"].active {
-    border-bottom-color: #FF4040;
-  }
-  
-  .company-tab[data-company="zenius"].active {
-    border-bottom-color: #BB33FF;
-  }
-  
-  .company-tab[data-company="cakap"].active {
-    border-bottom-color: #40E0D0;
-  }
-  
-  .company-tab[data-company="freelance"].active {
-    border-bottom-color: #04ff00;
-  }
 }
 
 /* Projects Section */
@@ -600,25 +609,6 @@ section {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .project-card {
-    max-width: 100%;
-    height: 250px;
-  }
-  
-  .project-description li {
-    font-size: 13px;
-  }
-}
-
-/* For larger screens - 3 columns */
-@media (min-width: 992px) {
-  .project-card {
-    max-width: 280px;
-  }
-}
-
 /* Short Stories Section */
 #stories {
   display: flex;
@@ -794,4 +784,70 @@ section {
     font-size: 24px;
     margin-bottom: 15px;
   }
+
+#splash {
+  height: auto;
+  min-height: 50vh;
+  padding-top: 80px; /* Extra padding to account for navbar */
+}
+
+.splash-logo {
+  max-width: 160px;
+  width: 50%;
+}
+
+.splash-title {
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+.splash-subtitle {
+  font-size: 14px;
+}
+
+.splash-description {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.contact-links {
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-link {
+  width: 180px;
+  justify-content: center;
+}
+
+.company-tab.active {
+  border-left: none;
+  border-bottom: 2px solid; /* The color will be inherited from the text color */
+}
+
+.company-tab[data-company="stairway"].active {
+  border-bottom-color: #FF4040;
+}
+
+.company-tab[data-company="zenius"].active {
+  border-bottom-color: #BB33FF;
+}
+
+.company-tab[data-company="cakap"].active {
+  border-bottom-color: #40E0D0;
+}
+
+.company-tab[data-company="freelance"].active {
+  border-bottom-color: #04ff00;
+}
+
+.project-card {
+  max-width: 100%;
+  height: 250px;
+}
+
+.project-description li {
+  font-size: 13px;
+}
 }
