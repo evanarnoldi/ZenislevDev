@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'ProximaNova'; /*a name to be used later*/
+  src: url("proximanova_regular.ttf"); /*URL to font*/
+}
+
+body {
+  background-color: black;
+  font-family: 'ProximaNova';
+  font-style: normal;
+  font-weight: 100;
+  color: white !important;
+}
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgb(37, 36, 37);
+  z-index: 1000;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar .navbar-nav .nav-link,
+.nav-link:hover,
+.navbar-brand,
+.nav-item.active .nav-link {
+  color: #ffffff !important; 
+}
+
+.navbar-toggler {
+  border-color: rgb(250, 243, 239);
+}
