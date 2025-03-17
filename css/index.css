@@ -452,6 +452,91 @@ section {
   color: #000000;
 }
 
+.creed-theme .project-role,
+.creed-theme .project-description li::before {
+  color: #ff0000; /* Blood Red */
+}
+
+.creed-theme .view-details-btn,
+.creed-theme .close-details-btn {
+  border: 2px solid #ff0000;
+  color: #ff0000;
+}
+
+.creed-theme .view-details-btn:hover,
+.creed-theme .close-details-btn:hover {
+  background-color: #ff0000;
+  color: #000000;
+}
+
+.cognitive-theme .project-role,
+.cognitive-theme .project-description li::before {
+  color: #15c473; /* Forest Green */
+}
+
+.cognitive-theme .view-details-btn,
+.cognitive-theme .close-details-btn {
+  border: 2px solid #15c473;
+  color: #15c473;
+}
+
+.cognitive-theme .view-details-btn:hover,
+.cognitive-theme .close-details-btn:hover {
+  background-color: #15c473;
+  color: #000000;
+}
+
+.hvac-theme .project-role,
+.hvac-theme .project-description li::before {
+  color: #c7d5e0; /* Aqua? */
+}
+
+.hvac-theme .view-details-btn,
+.hvac-theme .close-details-btn {
+  border: 2px solid #c7d5e0;
+  color: #c7d5e0;
+}
+
+.hvac-theme .view-details-btn:hover,
+.hvac-theme .close-details-btn:hover {
+  background-color: #c7d5e0;
+  color: #000000;
+}
+
+.museum-theme .project-role,
+.museum-theme .project-description li::before {
+  color: #fff200; /* Yellow */
+}
+
+.museum-theme .view-details-btn,
+.museum-theme .close-details-btn {
+  border: 2px solid #fff200;
+  color: #fff200;
+}
+
+.museum-theme .view-details-btn:hover,
+.museum-theme .close-details-btn:hover {
+  background-color: #fff200;
+  color: #000000;
+}
+
+.coding-theme .project-role,
+.coding-theme .project-description li::before {
+  color: #4584b6; /* Azure */
+}
+
+.coding-theme .view-details-btn,
+.coding-theme .close-details-btn {
+  border: 2px solid #4584b6;
+  color: #4584b6;
+}
+
+.coding-theme .view-details-btn:hover,
+.coding-theme .close-details-btn:hover {
+  background-color: #4584b6;
+  color: #000000;
+}
+
 .zenius-theme .project-role,
 .zenius-theme .project-description li::before {
   color: #BB33FF; /* Bright Purple */
@@ -586,7 +671,37 @@ section {
   transform: translateY(-3px);
 }
 
-/* Make sure project card backs have enough space */
+.cognitive-theme .platform-link:hover {
+  background-color: #15c473;
+  color: #000000;
+  transform: translateY(-3px);
+}
+
+.hvac-theme .platform-link:hover {
+  background-color: #c7d5e0;
+  color: #000000;
+  transform: translateY(-3px);
+}
+
+.museum-theme .platform-link:hover {
+  background-color: #fff200;
+  color: #000000;
+  transform: translateY(-3px);
+}
+
+.coding-theme .platform-link:hover {
+  background-color: #4584b6;
+  color: #000000;
+  transform: translateY(-3px);
+}
+
+.creed-theme .platform-link:hover {
+  background-color: #ff0000;
+  color: #000000;
+  transform: translateY(-3px);
+}
+
+/* Space for Project Cards Unbound */
 .project-card-back {
   display: flex;
   flex-direction: column;

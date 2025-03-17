@@ -1,22 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
   console.log("Mobile resume script loaded");
   
-  // Wait a bit to ensure all elements are fully loaded
+  // Wait elements load
   setTimeout(function() {
       const jobDescriptions = document.querySelectorAll('.job-description');
       console.log("Found job descriptions:", jobDescriptions.length);
       
       jobDescriptions.forEach(description => {
-          // Add collapsed class to all descriptions initially
+          // Add collapsed class to all descriptions
           description.classList.add('collapsed');
           
-          // Create toggle button
+          // Toggle button
           const toggleButton = document.createElement('span');
           toggleButton.classList.add('toggle-description');
           toggleButton.textContent = 'Read More';
           description.appendChild(toggleButton);
           
-          // Add click event to toggle
+          // Click to toggle
           toggleButton.addEventListener('click', function(event) {
               event.preventDefault(); // Prevent any default behavior
               console.log("Toggle clicked");
@@ -30,19 +30,19 @@ document.addEventListener('DOMContentLoaded', function() {
               }
           });
       });
-  }, 500); // Small delay to ensure DOM is fully processed
+  }, 500); // Delay to ensure DOM is fully processed
   // }
   
-  // Add better behavior for tab switching on mobile
+  // Better behavior for tab switching on mobile
   const companyTabs = document.querySelectorAll('.company-tab');
   companyTabs.forEach(tab => {
       tab.addEventListener('click', function() {
-          // If we're on mobile, scroll to the content
+          // Scroll to the content on mobile
           if (window.innerWidth <= 768) {
               const jobContent = document.querySelector('.job-content');
               setTimeout(() => {
                   jobContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }, 300); // Short delay to allow content to change
+              }, 300); // Short delay
           }
       });
   });
