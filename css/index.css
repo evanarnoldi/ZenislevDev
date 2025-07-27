@@ -278,6 +278,10 @@ section {
   color: #FF4040; /* Red */
 }
 
+#kuasar .toggle-description {
+  color: #ff8800; /* Dark Orange */
+}
+
 #zenius .toggle-description {
   color: #BB33FF; /* Bright Purple */
 }
@@ -353,6 +357,11 @@ section {
   border-left: 2px solid #FF4040;
 }
 
+.company-tab[data-company="kuasar"].active {
+  color: #ff8800; /* Dark Orange */
+  border-left: 2px solid #ff8800;
+}
+
 .company-tab[data-company="zenius"].active {
   color: #BB33FF; /* Bright Purple */
   border-left: 2px solid #BB33FF;
@@ -373,6 +382,11 @@ section {
   color: #FF4040; /* Red */
 }
 
+/* Company name colors */
+#kuasar .company-name {
+  color: #ff8800; /* Red */
+}
+
 #zenius .company-name {
   color: #BB33FF; /* Bright Purple */
 }
@@ -388,6 +402,10 @@ section {
 /* List item bullet colors */
 #stairway .job-description li::before {
   color: #FF4040; /* Red */
+}
+
+#kuasar .job-description li::before {
+  color: #ff8800; /* Dark Orange */
 }
 
 #zenius .job-description li::before {
@@ -616,6 +634,23 @@ section {
   color: #000000;
 }
 
+.tofu-theme .project-role,
+.tofu-theme .project-description li::before {
+  color: #ff8800; /* Dark Orange */
+}
+
+.tofu-theme .view-details-btn,
+.tofu-theme .close-details-btn {
+  border: 2px solid #ff8800;
+  color: #ff8800;
+}
+
+.tofu-theme .view-details-btn:hover,
+.tofu-theme .close-details-btn:hover {
+  background-color: #ff8800;
+  color: #000000;
+}
+
 .zenius-theme .project-role,
 .zenius-theme .project-description li::before {
   color: #BB33FF; /* Bright Purple */
@@ -734,6 +769,12 @@ section {
 /* Theme-specific platform link colors */
 .coral-theme .platform-link:hover {
   background-color: #00CED1;
+  color: #000000;
+  transform: translateY(-3px);
+}
+
+.tofu-theme .platform-link:hover {
+  background-color: #ff8800;
   color: #000000;
   transform: translateY(-3px);
 }
@@ -1022,6 +1063,10 @@ section {
 
 .company-tab[data-company="stairway"].active {
   border-bottom-color: #FF4040;
+}
+
+.company-tab[data-company="kuasar"].active {
+  border-bottom-color: #ff8800;
 }
 
 .company-tab[data-company="zenius"].active {
