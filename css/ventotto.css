@@ -1,0 +1,83 @@
+/* Paragraph 1 Class */
+#para1 {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  background: no-repeat center center;
+  background-size: cover;
+  padding: 60px 20px;
+}
+  
+  @keyframes colorShiftText {
+    0%, 100% {
+      color: #ffffff;
+      text-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 15px #ffffff;
+    }
+    50% {
+      color: #000000;
+      text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #000000;
+    }
+  }
+
+
+/* Paragraph 2 Class */
+#para2 {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  background: no-repeat center center;
+  background-size: cover;
+  padding: 60px 20px;
+}
+  
+  @keyframes colorShiftText {
+    0%, 100% {
+      color: #ffffff;
+      text-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 15px #ffffff;
+    }
+    50% {
+      color: #000000;
+      text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #000000;
+    }
+  }  
+
+  
+/* Paragraph 3 Class */
+#para3 {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: visible;
+  background: no-repeat center center;
+  background-size: cover;
+  padding: 20px 20px 60px 20px;
+  margin-top: -40px;
+}
+
+.para3_content {
+    width: 100%;
+    text-align: center;
+    overflow: visible;
+}
+
+/* Ensure sections don't overlap */
+section {
+  min-height: auto;
+  position: relative;
+  z-index: 1; /* Ensure proper stacking */
+  background-color: black; /* Match your site background */
+}
