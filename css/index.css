@@ -1171,3 +1171,15 @@ section {
     max-width: 1300px;
   }
 }
+
+/* SHA-256 checksum under the download button */
+.checksum {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
+.checksum code {
+  color: inherit;          /* Bootstrap colours <code> pink by default */
+  word-break: break-all;   /* let the long hash wrap on phones */
+  user-select: all;        /* one click selects the whole hash for copying */
+}
