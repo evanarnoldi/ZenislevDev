@@ -76,7 +76,7 @@ body {
   margin: 0 10px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767.98px) {
   .navbar-collapse {
       background-color: rgba(40, 40, 40, 0.95);
       padding: 15px;

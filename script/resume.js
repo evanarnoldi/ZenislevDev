@@ -11,10 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // Remove active class from all tabs
             document.querySelectorAll('.company-tab').forEach(t => {
                 t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+                t.tabIndex = -1;
             });
             
             // Add active class to clicked tab
             this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+            this.tabIndex = 0;
             
             // Get the company name from data attribute
             const company = this.getAttribute('data-company');
@@ -58,12 +62,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Initialize AOS
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: false
+    // Keyboard: arrow keys move between tabs (standard tabs behaviour), Home/End jump to first/last
+    const tabList = document.querySelector('.company-list');
+    if (tabList) {
+        tabList.addEventListener('keydown', function (e) {
+            const tabs = [...document.querySelectorAll('.company-tab')];
+            const current = tabs.indexOf(document.activeElement);
+            if (current === -1) return;
+
+            const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+            let next;
+            if (step) next = (current + step + tabs.length) % tabs.length;
+            else if (e.key === 'Home') next = 0;
+            else if (e.key === 'End') next = tabs.length - 1;
+            else return;
+
+            e.preventDefault();
+            tabs[next].focus();
+            tabs[next].click();
         });
     }
 });
