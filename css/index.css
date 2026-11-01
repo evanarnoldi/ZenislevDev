@@ -14,6 +14,16 @@ body {
 
 /* Tabs and card controls are real <button>s now (keyboard-accessible).
    :where() has zero specificity, so every existing rule below still wins over this reset. */
+/* Inline SVG icons (replace the Font Awesome web font): 1em tall, coloured like the text around them */
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: auto;
+  vertical-align: -0.125em;
+  fill: currentColor;
+  overflow: visible;
+}
+
 :where(.company-tab, .view-details-btn, .close-details-btn) {
   font: inherit;
   color: inherit;
@@ -115,7 +125,7 @@ section {
   color: white;
 }
 
-.contact-link i {
+.contact-link .icon {
   font-size: 18px;
   margin-right: 8px;
 }
@@ -744,7 +754,7 @@ section {
   text-decoration: none;
 }
 
-.platform-link i {
+.platform-link .icon {
   font-size: 20px;
 }
 
@@ -1137,4 +1147,27 @@ section {
 .prototype-video {
   width: 100%;
 }
+}
+
+/* Download button reuses the pill style of the contact links, sized to its text
+   (also on phones, where the contact links are fixed at 180px) */
+.prototype-download-link {
+  display: inline-flex;
+  width: auto;
+  white-space: nowrap;
+}
+
+/* Project cards may shrink a little (never grow past 400px), so tablets fit two per row
+   instead of one narrow column */
+.project-card {
+  flex: 1 1 320px;
+}
+
+/* Wide screens: three project cards per row and all four stories in one row,
+   instead of two narrow columns with wide empty margins */
+@media (min-width: 1320px) {
+  #projects,
+  #stories {
+    max-width: 1300px;
+  }
 }
