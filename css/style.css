@@ -1,11 +1,15 @@
 @font-face {
   font-family: 'ProximaNova'; /*a name to be used later*/
-  src: url("proximanova_regular.ttf"); /*URL to font*/
+  /* WOFF2 is ~70% smaller; browsers only fetch the TTF if they can't use WOFF2 */
+  src: url("proximanova_regular.woff2") format("woff2"),
+       url("proximanova_regular.ttf") format("truetype");
+  /* show fallback text immediately instead of invisible text while the font loads */
+  font-display: swap;
 }
 
 body {
   background-color: black;
-  font-family: 'ProximaNova';
+  font-family: 'ProximaNova', 'Helvetica Neue', Arial, sans-serif;
   font-style: normal;
   font-weight: 100;
   color: white !important;
